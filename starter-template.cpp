@@ -9,16 +9,9 @@ using namespace std;
     cout.tie(0);
 #define ln "\n"
 #define ll long long
-#define vll vector<long long>
-#define vvll vector<vector<long long>>
 #define vint vector<int>
-#define vvint vector<vector<int>>
+#define vll vector<long long>
 #define v(x) vector<x>
-#define vv(x) vector<vector<x>>
-#define pii pair<int, int>
-#define pll pair<long, long>
-#define pb push_back
-#define popb pop_back
 #define rep(i, s, n) for (int i = s; i < n; i++)
 
 void solve()
