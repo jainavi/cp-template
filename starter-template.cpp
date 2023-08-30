@@ -14,6 +14,8 @@ using namespace std;
 #define v(x) vector<x>
 #define rep(i, s, n) for (int i = s; i < n; i++)
 
+const ll INF = LONG_LONG_MAX;
+
 void solve()
 {
 }
