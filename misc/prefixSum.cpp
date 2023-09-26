@@ -5,18 +5,18 @@
 
 using namespace std;
 
+template <class T>
 class PrefixSum
 {
 private:
     vector<ll> preSum = {0};
 
 public:
-    PrefixSum(vector<int>& nums)
+    PrefixSum(vector<T> &nums)
     {
         for (int i = 0; i < nums.size(); i++)
-            preSum.push_back(*preSum.rbegin() + nums[i]);
+            preSum.push_back(preSum.back() + nums[i]);
     }
-    PrefixSum() {}
 
     ll getSum(int i, int j)
     {
@@ -35,6 +35,6 @@ public:
 
     void push_back(ll num)
     {
-        preSum.push_back(*preSum.rbegin() + num);
+        preSum.push_back(preSum.back() + num);
     }
 };
