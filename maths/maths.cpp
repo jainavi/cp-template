@@ -13,11 +13,11 @@ using namespace std;
 class Math
 {
 private:
-    static int MOD;
     int N;
     vll fact;
 
 public:
+    static int MOD;
     Math(int N) : fact(N + 1)
     {
         this->N = N;
@@ -25,7 +25,7 @@ public:
         for (int i = 1; i <= N; i++)
             fact[i] = (i * fact[i - 1]) % MOD;
     }
-
+    
     ll getFact(int n)
     {
         return fact[n];
@@ -34,22 +34,27 @@ public:
     static ll modPow(ll x, ll n)
     {
         if (n == 0)
-            return 1 % MOD;
+            return 1;
         long long u = modPow(x, n / 2);
         u = (u * u) % MOD;
         if (n % 2 == 1)
-            u = (u * x) % MOD;
+            u = (u * (x % MOD)) % MOD;
         return u;
-    }
-
-    static ll inv(ll x)
-    {
-        return modPow(x, MOD - 2);
     }
 
     static ll modDiv(ll a, ll b)
     {
         return (a * inv(b)) % MOD;
+    }
+
+    static ll modDiff(ll a, ll b)
+    {
+        return (MOD + a - b) % MOD;
+    }
+
+    static ll inv(ll x)
+    {
+        return modPow(x, MOD - 2);
     }
 
     ll ncr(ll n, ll r)
@@ -64,5 +69,3 @@ public:
         return abs(n - round(n)) < T;
     }
 };
-
-int Math::MOD = 1e9 + 7;
