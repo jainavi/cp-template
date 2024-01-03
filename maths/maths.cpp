@@ -68,4 +68,9 @@ public:
             return false;
         return abs(n - round(n)) < T;
     }
+
+    static ll sumInBetween(ll a, ll b) // including a and b
+    {
+        return (b * (b + 1) / 2) - (a * (a - 1) / 2);
+    }
 };
