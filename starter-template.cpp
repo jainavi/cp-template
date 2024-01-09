@@ -2,8 +2,11 @@
 
 #include <iostream>
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 
 using namespace std;
+using namespace __gnu_pbds;
 
 #define fast_io              \
     ios::sync_with_stdio(0); \
@@ -25,6 +28,7 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double lld;
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> pbds;
 
 #ifndef ONLINE_JUDGE
 #define debug(x) cerr << #x <<": "; _print(x); cerr << endl;
@@ -64,8 +68,8 @@ template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_pr
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";} 
 template <class T, class V> void _print(unordered_map <T, V, custom_hash> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";} 
 
-void solve()
-{
+void solve(int tc)
+{  
 }
 
 int main()
@@ -73,8 +77,8 @@ int main()
     fast_io;
     int t = 1;
     cin >> t;
-    // cout << fixed << setprecision(6);
-    while (t--)
-        solve();
+    // cout << fixed << setprecision(8);
+    rep(i, 0, t)
+        solve(i + 1);
     return 0;
-}                       
+}                           
