@@ -59,7 +59,7 @@ public:
 
     ll ncr(ll n, ll r)
     {
-        return n < r ? 0 : (fact[n] * inv(fact[n - r] * fact[r])) % MOD;
+        return n < r || r < 0 ? 0 : (fact[n] * inv(fact[n - r] * fact[r])) % MOD;
     }
 
     static bool isInt(double n, double T = 1e-10)
