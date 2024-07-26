@@ -42,6 +42,8 @@ public:
 		build();
 	}
 	Node queryNormal(int left, int right) {
+		if (right < left || left < 0) return Node();
+		
 		Node ans = Node();
 		for (int j = logValues[right - left + 1]; j >= 0; j--) {
 			if ((1 << j) <= right - left + 1) {
@@ -52,6 +54,8 @@ public:
 		return ans;
 	}
 	Node queryIdempotent(int left, int right) {
+		if (right < left || left < 0) return Node();
+
 		int j = logValues[right - left + 1];
 		Node ans = Node();
 		ans.merge(table[left][j], table[right - (1 << j) + 1][j]);
@@ -59,8 +63,8 @@ public:
 	}
 };
 struct Node1 {
-	ll val; // store more info if required
-	Node1() { // Identity Element
+	ll val;
+	Node1() {
 		val = 0;
 	}
 	Node1(ll v) {
